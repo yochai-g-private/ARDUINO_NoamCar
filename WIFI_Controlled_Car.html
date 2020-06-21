@@ -1,0 +1,40 @@
+<html>
+  <head>
+    <title>WIFI Controcar Car</title>
+  </head>
+  <body>
+<p style="text-align: center;">&nbsp;</p>
+<!-- in the <button> tags below the ID attribute is the value sent to the arduino -->
+<p style="padding-left: 30px;"><button id="0" class="car">Speed 400</button> <button id="1" class="car">Speed 470</button> <button id="2" class="car">Speed 540</button> <button id="3" class="car">Speed 610</button> <button id="4" class="car">Speed 680</button></p>
+<p style="padding-left: 30px;"><button id="5" class="car">Speed 750</button> <button id="6" class="car">Speed 820</button> <button id="7" class="car">Speed 890</button> <button id="8" class="car">Speed 960</button> <button id="9" class="car">Speed 1023</button></p>
+<table style="width: 287px; height: 279px; margin-left: 90px;">
+<tbody>
+<tr style="height: 52px;">
+<td class="car" style="width: 85px; height: 52px; text-align: center;">&nbsp;<button id="G" class="car">AHEAD-LEFT</button></td>
+<td class="car" style="width: 88px; height: 52px; text-align: center;">&nbsp;<button id="F" class="car">AHEAD</button></td>
+<td class="car" style="width: 92px; height: 52px; text-align: center;">&nbsp;<button id="I" class="car">AHEAD-RIGHT</button></td>
+</tr>
+<tr style="height: 54px;">
+<td class="car" style="width: 85px; height: 54px; text-align: center;">&nbsp;<button id="L" class="car">LEFT</button></td>
+<td class="car" style="width: 88px; height: 54px; text-align: center;">&nbsp; <button id="S" class="car">STOP</button></td>
+<td class="car" style="width: 92px; height: 54px; text-align: center;">&nbsp;<button id="R" class="car">RIGHT</button></td>
+</tr>
+<tr style="height: 54px;">
+<td class="car" style="width: 85px; height: 54px; text-align: center;">&nbsp;<button id="H" class="car">BACK-LEFT</button></td>
+<td class="car" style="width: 88px; height: 54px; text-align: center;">&nbsp;<button id="B" class="car">BACK</button></td>
+<td class="car" style="width: 92px; height: 54px; text-align: center;">&nbsp;<button id="J" class="car">BACK-RIGHT</button></td>
+</tr>
+</tbody>
+</table>    
+	<script src="jquery.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$(".car").click(function(){
+				var p = $(this).attr('id'); // get id value (i.e. pin13, pin12, or pin11)
+				// send HTTP GET request to the IP address with the parameter "State" and value "p", then execute the function
+				$.get("http://192.168.4.1:80/", {State:p}); // execute get request
+			});
+		});
+	</script>
+  </body>
+</html>

@@ -1,0 +1,5 @@
+Connect to Noami'sTJ WiFi
+
+http://192.168.4.1/CarData/?X=0&Y=0&F=0&S=0
+http://192.168.4.1/CarData/?X=0&Y=0&F=0&S=1
+http://192.168.4.1/CarData/?X=0&Y=0&F=0&S=2
