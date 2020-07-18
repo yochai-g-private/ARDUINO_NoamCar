@@ -6,7 +6,7 @@
 
 #include "NYG.h"
 #include "CalibratedAnalogInput.h"
-#include "Multiplexer.h"
+#include "AnalogMultiplexer.h"
 #include "Hysteresis.h"
 #include "Timer.h"
 #include "Toggler.h"
@@ -27,9 +27,9 @@ using namespace NYG;
 #define zAxisPin		D4
 
 //---------------------------------------------------------------------------------
-static Multiplexer					_multiplexer(MUX_A, MUX_B, MUX_C, ANALOG_INPUT);
+static AnalogMultiplexer			_multiplexer(MUX_A, MUX_B, MUX_C, ANALOG_INPUT);
 
-static MultiplexerInput				_xAxisPR(_multiplexer, 4),
+static AnalogMultiplexerInput		_xAxisPR(_multiplexer, 4),
 									_yAxisPR(_multiplexer, 1);
 
 static CalibratedAnalogInput*		_xAxis = CalibratedAnalogInput::Create(_xAxisPR, 50, 5);
