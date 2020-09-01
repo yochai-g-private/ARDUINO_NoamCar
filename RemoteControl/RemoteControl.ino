@@ -76,7 +76,7 @@ static int keep_alive_count = 0;
 //---------------------------------------------------------------------------------
 static bool connect_server(WiFiClient& client)
 {
-#define MAX_CONNECT_ATTEMPTS    10
+    #define MAX_CONNECT_ATTEMPTS    10
     for (int attempts = 0; ; attempts++)
     {
         if (client.connect(HOST_ADDRESS, HOST_PORT))
